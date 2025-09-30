@@ -7,9 +7,18 @@ terraform {
 }
 
 provider "snowflake" {
-  authenticator = "PROGRAMMATIC_ACCESS_TOKEN"
-  token         = var.token
+  organization_name = var.SNOWFLAKE_ORGANIZATION_NAME
+  account_name      = var.SNOWFLAKE_ACCOUNT_NAME
+  user              = var.SNOWFLAKE_USER
+  authenticator     = "PROGRAMMATIC_ACCESS_TOKEN"
+  token             = var.token
 }
+
+variable "SNOWFLAKE_ORGANIZATION_NAME" {
+
+}
+variable "SNOWFLAKE_ACCOUNT_NAME" {}
+variable "SNOWFLAKE_USER" {}
 
 variable "token" {
   type      = string
